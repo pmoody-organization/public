@@ -1,25 +1,19 @@
 name: this is the scan
 
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "*" ]
   pull_request:
-    branches: [ "*" ]
+    paths:
+      - '*'
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+scan:
+  runs-on: self-hosted
+  name: scan
 
-jobs:
-  scan:
-    runs-on: ubuntu-latest
-    name: scan
+  steps:
+  - uses: actions/checkout@v3
+    with:
+      fetch-depth: 0
+      ref: ${{ github.head_ref }}
 
-    steps:
-    - uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
-        ref: ${{ github.head_ref }}
-
-    - name: trufflehog-actions-scan
-      uses: edplato/trufflehog-actions-scan@master
+  - name: trufflehog-actions-scan
+    uses: edplato/trufflehog-actions-scan@master
