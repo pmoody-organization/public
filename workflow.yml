@@ -1,9 +1,11 @@
+name: this is the scan
+
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
+    branches: [ "*" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "*" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -14,7 +16,7 @@ jobs:
     name: scan
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
       with:
         fetch-depth: 0
         ref: ${{ github.head_ref }} // necessary for pull request workflow trigger
