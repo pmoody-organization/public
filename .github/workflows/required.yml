@@ -1,0 +1,22 @@
+# This is a basic workflow to help you get started with Actions
+
+name: required
+
+# Controls when the workflow will run
+on:
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    name: scan
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        ref: ${{ github.head_ref }} // necessary for pull request workflow trigger
+
+    - name: trufflehog-actions-scan
+      uses: edplato/trufflehog-actions-scan@master
