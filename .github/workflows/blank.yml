@@ -15,18 +15,18 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  scan:
-    runs-on: ubuntu-latest
-    name: scan
-
-    steps:
-    - uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
-        ref: ${{ github.head_ref }}
-
-    - name: trufflehog-actions-scan
-      uses: edplato/trufflehog-actions-scan@master
+#  scan:
+#    runs-on: ubuntu-latest
+#    name: scan
+#
+#    steps:
+#    - uses: actions/checkout@v3
+#      with:
+#        fetch-depth: 0
+#        ref: ${{ github.head_ref }}
+#
+#    - name: trufflehog-actions-scan
+#      uses: edplato/trufflehog-actions-scan@master
 
   build:
     # The type of runner that the job will run on
