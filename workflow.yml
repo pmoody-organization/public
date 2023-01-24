@@ -1,0 +1,2 @@
+- name: Trufflehog Actions Scan
+  uses: edplato/trufflehog-actions-scan@v0.9l-beta
