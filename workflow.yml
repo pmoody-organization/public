@@ -7,10 +7,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  runs-on: ubuntu-latest
-  name: scan
-
   scan:
+    runs-on: ubuntu-latest
+    name: scan
     steps:
     - uses: actions/checkout@v3
       with:
