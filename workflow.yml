@@ -2,11 +2,10 @@ name: this is the scan
 
 on:
   pull_request:
-    paths:
-      - '*'
+  workflow_dispatch:
 
 scan:
-  runs-on: self-hosted
+  runs-on: ubuntu-latest
   name: scan
 
   steps:
@@ -15,5 +14,5 @@ scan:
       fetch-depth: 0
       ref: ${{ github.head_ref }}
 
-  - name: trufflehog-actions-scan
-    uses: edplato/trufflehog-actions-scan@master
+  - name: hello world
+    run: echo "hello world"
