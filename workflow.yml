@@ -11,10 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     name: scan
     steps:
-    - uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
-        ref: ${{ github.head_ref }}
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
 
     - name: hello world
       run: echo "hello world"
