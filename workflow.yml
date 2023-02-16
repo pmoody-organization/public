@@ -10,11 +10,12 @@ jobs:
   runs-on: ubuntu-latest
   name: scan
 
-  steps:
-  - uses: actions/checkout@v3
-    with:
-      fetch-depth: 0
-      ref: ${{ github.head_ref }}
+  scan:
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        ref: ${{ github.head_ref }}
 
-  - name: hello world
-    run: echo "hello world"
+    - name: hello world
+      run: echo "hello world"
