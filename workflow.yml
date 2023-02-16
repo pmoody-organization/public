@@ -2,6 +2,8 @@ name: this is the scan
 
 on:
   pull_request:
+    paths:
+      - '*'
   workflow_dispatch:
 
 jobs:
