@@ -4,7 +4,7 @@ on:
   pull_request:
   workflow_dispatch:
 
-scan:
+jobs:
   runs-on: ubuntu-latest
   name: scan
 
