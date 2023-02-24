@@ -20,6 +20,7 @@ jobs:
       - name: hello world
         run: echo "hello world"
 
+
       - name: trufflehog-actions-scan
         uses: edplato/trufflehog-actions-scan@master
 
