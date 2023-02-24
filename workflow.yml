@@ -20,5 +20,12 @@ jobs:
       - name: hello world
         run: echo "hello world"
 
-      - name: tufflehog-scanner
+
+      - name: trufflehog-actions-scan
         uses: edplato/trufflehog-actions-scan@master
+
+      - name: verify-commits
+        uses: vchain-us/verify-action@master
+
+      - name: also verify this way
+        run: git show --show-signature
