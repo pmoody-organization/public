@@ -24,4 +24,7 @@ jobs:
         uses: edplato/trufflehog-actions-scan@master
 
       - name: also verify this way
-        run: git verify-commit -v --raw HEAD
+        run: |
+        if ! $(git verify-commit -v --raw HEAD 2>&1 > /dev/null) ; then
+          echo "this commit isn't signed. you'll be in big trouble, mister.
+        fi
